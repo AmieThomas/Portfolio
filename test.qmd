@@ -1,0 +1,162 @@
+---
+title: "Statistical Practice Project Portfolio"
+author: Amie Thomas
+format: pdf
+editor: visual
+toc: true
+toc-title: Table of Contents
+number-sections: true
+---
+
+\# First Page (Title Page)
+
+\\newpage
+
+\# Table of Contents
+
+{{< pagebreak >}}
+
+## Survey Validation: Autism Spectrum Disorder of Children in India
+
+### Intro
+
+Our client, a postdoctoral researcher at the Child and Family Health Lab at Boston University, sought to explore parents' perceptions of the effectiveness and impact of Speech-Language Therapy for children with autism. To examine these perceptions in relation to other variables such as age and income, a survey was distributed that included questions addressing both demographic and therapy-related factors. The client approached us with the goal of assessing the reliability of the survey results, as well as ensuring that the questions related to Access to and Quality of Speech-Language Therapy were accurately measuring those intended constructs.
+
+### Data and Methods
+
+The initial step in our analysis involved cleaning the data provided by our client, a postdoctoral researcher at the Child and Family Health Lab at Boston University. This process included clarifying the meaning of each variable and ensuring its relevance to the client\'s objectives. During this phase, we identified missing data and inconsistencies in the responses. Following data preparation, we conducted exploratory data analysis (EDA) to uncover patterns and visualize differences between two groups in the study: parents of children who attended Speech-Language Therapy (SLT) and those whose children did not.
+
+To assess the reliability and validity of the survey questions, we focused on two primary statistical methods: Cronbach\'s alpha for internal consistency and factor analysis for construct validity. Given the small sample size of 110 data points, split roughly 60-50 between the two groups, and the fact that the questions differed across groups, we performed the tests separately for each group. Recognizing the limitations of sample size, we referred to literature on minimum sample sizes for reliability testing and determined that principal component analysis (PCA) was necessary. Specifically, we applied PCA to reduce dimensionality, removed components with loadings below 0.4, and re-ran the analysis. We followed the guidance of Yurdugul (2008) and Guadagnoli & Velicer (1988), which suggested proceeding with Cronbach\'s alpha and factor analysis only if the first principal component had an eigenvalue greater than 4 and at least four factor loadings exceeded 0.8.
+
+### Results
+
+Unfortunately, the principal component analysis did not meet the required thresholds to proceed with Cronbach\'s alpha or confirmatory factor analysis. Specifically, the eigenvalue of the first principal component was below the required threshold of 4, and the loadings did not reach the 0.8 threshold needed for stability. As a result, we could not conclusively establish the reliability (via Cronbach\'s alpha) or validity (via factor analysis) of the survey questions. Despite this, our analysis still provided valuable insights. We were able to produce visualizations that illustrated differences between the two groups, which could guide the client in interpreting the data qualitatively, even in the absence of robust statistical confirmation.
+
+### Conclusion
+
+While the statistical tests for reliability and validity could not be completed due to sample size limitations, the project provided key insights for both our client and our team. We emphasized that the absence of conclusive results does not imply that the data is unreliable or invalid, but rather that we could not assert this with certainty given the statistical constraints. This experience highlighted the importance of understanding statistical limitations, especially with small sample sizes, and reinforced the ethical responsibility to communicate findings transparently. Additionally, it underscored the need to balance rigorous statistical practices with the practical needs of clients, providing them with useful visualizations and guidance even when the statistical outcomes are inconclusive.
+
+{{< pagebreak >}}
+
+## Products of Our Environment
+
+### Intro
+
+This project explores how neighborhood amenities, like libraries and entertainment centers, influence residents\' educational outcomes. Inspired by theories like Bronfenbrenner\'s Ecological Systems Theory and Shaw and McKay\'s Social Disorganization Theory, it delves into how neighborhoods shape individuals\' lives. I predict that areas with more vice businesses might correlate with lower education levels, while those with learning and entertainment centers could support higher educational achievements. By analyzing neighborhood attributes and educational outcomes, I aim to understand how communities affect access to education and opportunities, aligning with theories on human development within community contexts. 
+
+### Data and Methods
+
+The objective of this project was to preprocess, merge, and analyze multiple datasets from the National Neighborhood Data Archive (NanDA) to explore the relationship between neighborhood social infrastructure and the likelihood of residents acquiring a college degree. The analysis aimed to identify the most effective predictive model for educational attainment, considering the influence of various neighborhood amenities, while addressing the hierarchical nature of the data (e.g., census tracts nested within regions).
+
+\
+Data preparation involved filtering the 2017 datasets to retain relevant variables, particularly those indicating social infrastructure per 1000 residents, to normalize for neighborhood size. Missing or irrelevant data were cleaned by removing rows with zero population counts or incomplete census tract information. The datasets were then merged using census tract FIPS codes to create a unified dataset for analysis. Exploratory data analysis (EDA) was conducted to uncover potential relationships between neighborhood features and educational outcomes. A hierarchical logistic regression model was chosen to account for both binary outcomes (college degree attainment) and the nested structure of the data. Various models were trained and evaluated based on metrics such as accuracy, precision, and F1-score to determine the best model for predicting educational attainment in relation to neighborhood amenities.
+
+### Results
+
+The results of the complete pooling model highlight significant relationships between neighborhood amenities and the likelihood of residents obtaining a college degree. Notably, amenities such as performing arts, libraries, recreation, and fitness were positively associated with higher educational attainment, with each unit increase in performing arts, libraries, recreation, and fitness corresponding to increases in the log-odds of having a college degree by 1.217, 0.241, 0.315, and 0.991, respectively. In contrast, the presence of amusement parks, tobacco facilities, and religious organizations were linked to lower educational outcomes. Specifically, a one-unit increase in amusement parks decreased the log-odds of college attainment by 0.290, while each additional unit of tobacco facilities and religious organizations resulted in decreases of 0.574 and 0.460 in the log-odds, respectively. Interestingly, liquor stores did not exhibit a significant effect on educational attainment. These findings suggest that certain neighborhood amenities can play a crucial role in shaping residents' educational opportunities, with cultural and recreational facilities fostering higher educational achievement, while the presence of certain vice-related businesses and religious organizations may have a detrimental effect.
+
+### Conclusion
+
+This project highlights the significant role that neighborhood amenities play in shaping educational outcomes. The analysis reveals that facilities such as performing arts, libraries, recreation, and fitness centers are positively associated with higher educational attainment, while amenities like amusement parks, tobacco outlets, and religious organizations are linked to lower college degree attainment. The findings suggest that cultural and recreational infrastructure can foster educational opportunities, while vice-related businesses and religious organizations may hinder them. Overall, this study underscores the importance of neighborhood social infrastructure in influencing residents' educational success.
+
+{{< pagebreak >}}
+
+## Brazilian Diaspora
+
+### Intro
+
+Approximately 700,000 Brazilians, or 0.5% of the total electorate, cast their votes from abroad. This diverse group spans multiple continents and encompasses a wide range of demographics, including variations in gender, age, education level, and socioeconomic status. However, despite this diversity, certain localized patterns may emerge in the composition of the electorate. The Instituto Diáspora Brasil (IDB), a non-profit organization dedicated to empowering Brazilian communities abroad, seeks to better understand this electorate to tailor its informational campaigns and materials. Through this research, IDB aims to enhance its public policy initiatives, focusing on the cultural, political, and economic empowerment of Brazilians living outside of Brazil.
+
+### Data and Methods
+
+For this analysis, we utilized data from the Brazilian Supreme Electoral Court covering the 2014, 2018, and 2022 Presidential Elections, spanning 181 cities. The dataset includes 25 variables such as gender, education, marital status, and age, all of which were translated from Portuguese to English for consistency and ease of analysis. To enhance the dataset, we added columns with country names and continent information to each city\'s data. The data from all three election years were merged to create a comprehensive view of overseas Brazilian voters. Exploratory Data Analysis (EDA) was then conducted to identify demographic patterns among these voters. Cities were grouped based on similarities in the analyzed variables, and a distance matrix was calculated between each pair of cities using Euclidean distance to quantify the dissimilarity of their characteristics. A dendrogram and a distance map were then created from these matrices to visualize city clusters. These clusters were divided into three groups, which allowed us to explore the distribution of key voter characteristics within each cluster and identify typical voter profiles. The clustering approach provided insights into how different factors, such as education or age, correlate across cities and influence the overseas Brazilian electorate.
+
+### Results
+
+The analysis identified three distinct clusters of typical voters within the Brazilian diaspora. Differences in education levels and age ranges were observed across the clusters. In countries like Japan, all cities grouped into a single cluster, while in the United States, cities were spread across multiple clusters, reflecting greater demographic diversity. The composition of the clusters varied depending on the specific variables used in the distance calculations, highlighting the sensitivity of the clustering results to different sociodemographic factors. These findings offer valuable insights for targeted outreach and policy development for the overseas Brazilian electorate.
+
+### Conclusion
+
+The clustering analysis of overseas Brazilian voters revealed three distinct groups, each defined by variations in key demographic factors such as education, age, and socioeconomic status. The findings demonstrated that while some countries, such as Japan, exhibited a more homogenous electorate, others like the United States showcased a greater degree of diversity in their voter profiles. The composition of these clusters proved to be sensitive to the variables included in the distance calculations, highlighting the nuanced ways in which sociodemographic factors shape the diaspora electorate. These insights provide the Instituto Diáspora Brasil (IDB) with a more sophisticated understanding of the overseas Brazilian voter base, enabling the development of targeted, data-driven policies and communication strategies that can more effectively engage these communities.
+
+{{< pagebreak >}}
+
+## Kleefstra Syndrome Disease Concept Model Visualizations
+
+### Intro
+
+Kleefstra Syndrome is a rare genetic disorder marked by developmental delay, intellectual disability, and distinctive facial features. While symptoms are documented, the impact of the disorder on individuals and caregivers is less understood.
+
+Our client, a genetic counseling graduate student at Boston University, is developing a disease concept model for Kleefstra Syndrome as part of her capstone project. This model aims to assess the lived experience of individuals and their families and to help create outcome measures. The project involves creating visualizations to display the frequency of concepts and impacts mentioned by caregivers, comparing these across different age groups. Although the client initially referenced an area plot from similar research, it was found that this type of plot, with a continuous age axis, does not effectively represent changes in proportions across discrete age groups. The goal is to develop a visualization that can inform healthcare professionals about the effects of KS at various ages, helping prioritize interventions.
+
+### Data and Methods
+
+The client conducted survey interviews with caregivers, who referenced individuals with Kleefstra Syndrome (KS) ranging from under two to 17 years old. Caregivers mentioned a variety of concepts related to KS, including motor and neurological symptoms, social and health impacts on the individuals, and financial or emotional impacts on caregivers.
+
+To address the client's needs, two visualization options were proposed: a frequency heatmap and a stacked bar plot. Heatmaps are effective for revealing relationships between variables by using color to highlight areas of high and low values. In this case, the frequency of each symptom or impact was calculated by dividing the number of references to each by the total number of references in that age group, normalizing the data and allowing for comparison across age groups with varying response sizes. The stacked bar plot, on the other hand, provides a clear view of how the frequency of references changes across age groups.
+
+### Results
+
+Analysis of both the heatmap and stacked bar plot revealed consistent trends in reference frequencies. For individual impacts of KS, health was the most frequently mentioned for children under 2, but as age increased, references to health decreased and social impacts became more prominent. For caregiver impacts, emotional references declined, while social impact references grew. The heatmap provided a clearer comparison of references to KS defining features across age groups, as it showed exact frequencies, unlike the stacked bar plot. Additionally, the stacked bar plot made it harder to compare impacts or concepts when the bars started from different baselines.
+
+### Conclusion
+
+The heatmap and stacked bar plot are both effective visualizations for comparing reference frequencies across different age groups. Line graphs or area graphs would not be suitable for this data, as they are designed for continuous x-axes, whereas the age data is categorical, divided into distinct age groups. Therefore, the heatmap and stacked bar plot serve as better alternatives to area graphs for displaying this type of categorical data. One key advantage of the heatmap is that it provides exact frequencies for each reference, something that the stacked bar plot does not offer.
+
+{{< pagebreak >}}
+
+## BU Sustainability
+
+### Intro
+
+Carbon emissions are the release of CO2 and other greenhouse gases from human activities, primarily from burning fossil fuels like coal, oil, and natural gas for energy and transportation. Emissions are categorized into three scopes: Scope 1 refers to direct emissions from an organization's operations, such as fuel burned in furnaces. Scope 2 includes indirect emissions from purchased electricity, heat, and steam. Scope 3 covers emissions from an organization\'s value chain, including the purchase, use, and disposal of products, as well as transportation for employees and students. At Boston University, Scope 3 emissions include travel and transportation for students and faculty.
+
+Boston University (BU) Sustainability has outlined its commitment to addressing global warming through its Climate Action Plan, which includes a target of achieving net-zero carbon emissions by 2040. The goal of this project is to assist in calculating the university's Scope 3 emissions.
+
+### Data and Methods
+
+BU Sustainability provided our team with four datasets from different suppliers to help calculate the university's Scope 3 emissions. In our smaller team, we focused on one dataset covering purchases from a single supplier, with data from the 2022 and 2023 fiscal years, along with partial data for 2024. The dataset included product names, IDs, quantities purchased, and total sales but lacked specific CO2 emissions data for each product. The supplier could not provide this information as they source products from other companies and would need to request emissions data from each one.
+
+To address this, we used the EPA\'s greenhouse gas emission factors, based on the North American Industry Classification System (NAICS), which provide emissions data for broader commodity categories like furniture manufacturing and office supplies. The emissions are measured in kilograms of CO2 per US dollar spent. We then matched the purchased products to these broader categories by web scraping product IDs from the company\'s website and linking them to corresponding EPA categories. Due to mismatches between the company's categories and the EPA\'s, we were able to use only nine categories. For each of these, we multiplied the total sales by the EPA\'s emissions factor to estimate the total emissions for each category.
+
+### Results
+
+Visualizations revealed the product category with the highest emissions from this supplier. The same category was the top emitter in both the 2022 and 2023 fiscal years, with a slight increase in emissions in 2023. This suggests that BU purchases a consistent volume of products in this category year after year, leading to a similar level of CO2 emissions. A closer look at this category showed that one specific item was responsible for the majority of emissions in both years.
+
+### Conclusion
+
+The unavailability of product-level carbon emissions data from this company limited our ability to calculate precise total emissions. However, by web scraping and combining the company\'s data with the EPA dataset, we were able to estimate broader emissions figures. While exact CO2 emissions were not determined, these broader calculations still provide valuable insights for BU Sustainability. They can help identify high-emission products and potentially guide the search for more environmentally friendly alternatives.
+
+{{< pagebreak >}}
+
+## Masanoa's Death Project
+
+### Intro
+
+### Data and Methods
+
+### Results
+
+### Conclusion
+
+{{< pagebreak >}}
+
+## Demystifying Development Costs
+
+### Intro
+
+This project aimed to validate the total development costs (TDC) and line-item expenses for developing market-rate and affordable housing in Boston, using real city data. By analyzing the Mayor\'s Office of Housing\'s Housing Master Database and the Neighborhood Housing Development division\'s project data, the team estimated the average TDC for construction starts between 2022 and 2024. With development costs exceeding \$600,000 per unit for market-rate housing and construction costs doubling in Boston from 2017 to 2023, public subsidies for homeownership now surpass \$300,000 per unit, limiting the impact of public funding. This research leverages actual data to challenge assumptions based on generalized sources and to assess how city policies are affecting costs. The goal is to understand the current cost baseline, identify the drivers of rising TDCs, and explore policy solutions to reduce development expenses. In collaboration with the Neighborhood Housing Development division, the research seeks to: 1) determine the true cost to develop housing in Boston, 2) uncover the factors driving rising costs, and 3) identify strategies to lower development costs.
+
+### Data and Methods
+
+For this analysis, we received the Housing Master dataset (dated 5/17/2024) and transferred it to Google Sheets for further processing. We focused on new construction projects starting after June 2022, excluding preservation and ADU projects, as well as those with significant data inconsistencies (e.g., discrepancies in unit counts or zero development costs). The dataset was categorized by development type (public vs. private) and project characteristics (e.g., rental, ownership, or mixed-use). For market-rate projects, a multiplier of 2.1 was applied to permit values to estimate total development costs (TDC), following feedback from industry developers. After applying these filters and adjustments, 274 projects were retained for analysis.
+
+To estimate TDC, all costs were inflation-adjusted to January 2024 values using CPI data from the U.S. Bureau of Labor Statistics. Special adjustments were made for acquisition and relocation costs, particularly for city-funded projects, where land costs varied widely. Projects with incomplete or inconsistent data were excluded, resulting in a final sample of 52 Neighborhood Housing Development (NHD) projects. The TDC for these projects was calculated using a project-weighted average to minimize the impact of outliers and provide a more accurate representation of development costs. This approach allowed for a comprehensive understanding of the factors influencing development costs in Boston\'s housing market.
+
+### Results
+
+While Boston collects extensive data, it is far from perfect and contains significant inconsistencies that hinder the ability to draw reliable conclusions. To gain meaningful insights into development costs, the Mayor's Office of Housing and other departments will need to collaborate on revamping data collection and stewardship practices. The current pricing market is high, and developers across the board are struggling to advance new projects due to key stressors such as rising construction costs, labor shortages, high interest rates, and escalating soft costs. Affordable housing, in particular, consistently proves more expensive to build across various housing typologies, largely because it does not benefit from the same economies of scale as the private market. The key factors driving these higher costs include differing incentive models, larger construction costs (due to factors like unit size and bedroom mix), and longer development timelines. While the development cost market may seem like "death by a thousand cuts," momentum is building across sectors to find real solutions. Our recommendations include: 1) investing in building capacity for better data stewardship, 2) continuing to explore additional areas of inquiry, and 3) considering meaningful policy levers for both the Mayor's Office of Housing and the City of Boston.
+
+### Conclusion
+
+This analysis highlights the significant challenges Boston faces in controlling development costs, particularly in affordable housing. Despite efforts to understand these costs through city data, the current dataset contains inconsistencies that limit the ability to draw definitive conclusions. The rising costs of construction, coupled with labor shortages, high interest rates, and escalating soft costs, are key barriers to new housing projects. The gap between the costs of market-rate and affordable housing remains wide, with affordable housing consistently proving more expensive due to structural differences in financing, construction, and project timelines. Moving forward, the Mayor\'s Office of Housing and the City of Boston must collaborate to improve data collection and stewardship practices, allowing for more accurate assessments and better-informed policy decisions. Key strategies include building capacity for data management, further exploring cost drivers, and leveraging policy tools to reduce development expenses, ultimately ensuring that public dollars go further in addressing the city's housing needs.
